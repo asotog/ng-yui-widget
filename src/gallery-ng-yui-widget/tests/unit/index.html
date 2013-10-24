@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <title>gallery-ng-yui-widget</title>
+        <script src="/build/yui/yui.js"></script>
+        <script src="/build/gallery-ng-yui-widget/gallery-ng-yui-widget.js"></script>
+        <script src="js/tests.js"></script>
+        <meta charset="utf-8" />
+    </head>
+    
+    <body class="yui3-skin-sam">
+        <div ng-app="TestApp">
+            	<div ng-controller="TestCtrl">
+	                <div style="width: 500px">
+	                    <div ng-scrollview data-height="scrollViewHeight">
+	                        <ul>
+	                            <li>AC/DC</li>
+	                            <li>Aerosmith</li>
+	                            <li>Bob Dylan</li>
+	                            <li>Bob Seger</li>
+	                            <li>AC/DC</li>
+	                            <li>Aerosmith</li>
+	                            <li>Bob Dylan</li>
+	                            <li>Bob Seger</li>
+	                            <li>AC/DC</li>
+	                            <li>Aerosmith</li>
+	                            <li>Bob Dylan</li>
+	                            <li>Bob Seger</li>
+	                            <li>AC/DC</li>
+	                            <li>Aerosmith</li>
+	                            <li>Bob Dylan</li>
+	                            <li>Bob Seger</li>
+	                        </ul>
+	                    </div>
+	                </div>
+	                
+	                
+	                <ng-slider data-value="position" data-max="10"></ng-slider>
+	                <input type="text" ng-model="position"/>
+	                <div>{{position}}</div>
+                </div>
+           
+           
+        </div>
+         <h1>Pure YUI Scroll</h1>
+                    <div id="logger"></div>
+        <script>
+            YUI({
+                modules: {
+                    /*deps*/
+                    'angular': {
+                        base: '/',
+                        path: 'tests/unit/js/angular.js',
+                        async: false,
+                        requires: []
+                    }
+                },
+                coverage: ['gallery-ng-yui-widget'],
+                filter: (window.location.search.match(/[?&]filter=([^&]+)/) || [])[1] || 'raw'
+            }).use('angular', 'test-console', 'test', 'module-tests', 'scrollview', 'slider', 'gallery-ng-yui-widget', function(Y) {
+                /* inits angular app */
+                var testModule = angular.module('TestApp', []);
+                testModule.controller('TestCtrl', function($scope) {
+                    $scope.scrollViewHeight = '166px';
+                    $scope.position = 0;
+                });
+                
+                /* inits ng widget for slider widget */
+                new Y.NGWidget({directiveName: 'ngSlider', bindedAttrs: ['value'], widgetClass: Y.Slider, ngModule: testModule});
+                new Y.NGWidget({directiveName: 'ngScrollview', bindedAttrs: [], widgetClass: Y.ScrollView, ngModule: testModule, progressive: true});
+             
+                
+                /* inits yui unit tests */
+                (new Y.Test.Console()).render('#logger');
+                Y.Test.Runner.setName('gallery-ng-yui-widget');
+                Y.Test.Runner.run();
+            });
+        </script>
+    </body>
+
+</html>

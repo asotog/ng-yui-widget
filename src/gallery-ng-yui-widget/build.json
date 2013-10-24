@@ -1,0 +1,10 @@
+{
+    "name": "gallery-ng-yui-widget",
+    "builds": {
+        "gallery-ng-yui-widget": {
+            "jsfiles": [
+                "js/gallery-ng-yui-widget.js"
+            ]
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "gallery-ng-yui-widget": {
+        "requires": [
+            "yui-base",
+            "base-build"
+        ]
+    }
+}

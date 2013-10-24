@@ -1,0 +1,11 @@
+{
+    "name"       : "gallery-ng-yui-widget",
+    "displayName": "Gallery: gallery-ng-yui-widget",
+    "description": "*Summary Goes Here*",
+    "author"     : [ "asotog88" ],
+    "use"        : [ "gallery-ng-yui-widget" ],
+
+    "tags": [ "gallery" ],
+
+    "examples": []
+}
