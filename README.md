@@ -15,7 +15,7 @@ To get the directive ready to use based on the widget the class **Y.NGWidget** n
 | Attribute Name    | Description       | Type  | Optional  |
 | ------------- | ------------- | ----- | ----- |
 | **directiveName**     | Directive name based on angular js specs | **String** | No |
-| **bindedAttrs**      | List of widget attributes that are going to be binded to directive scope  | **Array**, with the list of attributes names | Yes |
+| **bindedAttrs**      | List of widget attributes that are going to be bind to directive scope  | **Array**, with the list of attributes names | Yes |
 | **widgetClass**       | YUI widget class that is going to be used for the directive | **Y.Widget** or **Y.Base** subclass  | No |
 | **ngModule**         | Angular module  | **Object**, angular module previously configured  | No |
 | **progressive**       | If directive is going to use progressive YUI widget instantiantion |  **Boolean**, by default is false | Yes |
