@@ -1,8 +1,8 @@
 Angular YUI Widget
 ==================
 
-This yui module is a kind of bridge for YUI widgets, avoids create entire directives to make work yui widgets, it provides
-a way bind widget attributtes to directive scope and viceversa
+This yui module is a kind of bridge for [YUI widgets](http://yuilibrary.com/yui/docs/widget/), avoids create entire directives to make work yui widgets, it provides
+a way to bind widget attributtes to directive scope and viceversa
 
 
 ### Constructor
@@ -29,6 +29,7 @@ The following example demostrates how to create 2 directives, using scrollview a
 <div ng-app="TestApp">
   	<div ng-controller="TestCtrl">
         <div style="width: 500px">
+            <!-- sets scrollview height attribute with scope value -->
             <div ng-scrollview data-height="scrollViewHeight">
                 <ul>
                     <li>AC/DC</li>
@@ -51,7 +52,7 @@ The following example demostrates how to create 2 directives, using scrollview a
             </div>
         </div>
         
-        
+        <!-- sets slider widget value and max attributes with scope values, value attribute has two way binding configured with bindedAttrs: ['value'] in js code below -->
         <ng-slider data-value="position" data-max="10"></ng-slider>
         <input type="text" ng-model="position"/>
         <div>{{position}}</div>
